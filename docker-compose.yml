@@ -1,0 +1,46 @@
+version: '2'
+services:
+
+  redis-base:
+    build: ./docker-redis/base/
+    image: volkodav/redis:3
+
+  redis-monitor:
+    build: ./docker-redis/monitor
+    network_mode: "host"
+
+  redis-server1:
+    build: ./docker-redis/server/node1/
+    depends_on:
+      - redis-base
+    network_mode: "host"
+
+  redis-server2:
+    build: ./docker-redis/server/node2/
+    depends_on:
+      - redis-base
+    network_mode: "host"
+
+  redis-server3:
+    build: ./docker-redis/server/node3/
+    depends_on:
+      - redis-base
+    network_mode: "host"
+
+  redis-sentinel1:
+    build: ./docker-redis/sentinel/node1/
+    depends_on:
+      - redis-base
+    network_mode: "host"
+
+  redis-sentinel2:
+    build: ./docker-redis/sentinel/node2/
+    depends_on:
+      - redis-base
+    network_mode: "host"
+
+  redis-sentinel3:
+    build: ./docker-redis/sentinel/node3/
+    depends_on:
+      - redis-base
+    network_mode: "host"
