@@ -22,10 +22,10 @@ All services mapped to host with different ports. Initially Redis1 start as a ma
 * Run docker without sudo [how to](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo) 
 
 ## Configuration 
-*Redis installation*: *./docker-redis/base* 
-*Redis nodes*: *./docker-redis/server/node(1|2|3)* 
-*Sentinel*: *./docker-redis/sentinel/node(1|2|3)*
-*Monitoring*: *./docker-redis/monitor*
+* *Redis installation*: *./docker-redis/base* 
+* *Redis nodes*: *./docker-redis/server/node(1|2|3)* 
+* *Sentinel*: *./docker-redis/sentinel/node(1|2|3)*
+* *Monitoring*: *./docker-redis/monitor*
 
 ## How to run
 ```
