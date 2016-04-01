@@ -7,40 +7,47 @@ services:
 
   redis-monitor:
     build: ./docker-redis/monitor
+    container_name: redis-monitor
     network_mode: "host"
 
   redis-server1:
     build: ./docker-redis/server/node1/
+    container_name: redis1
     depends_on:
       - redis-base
     network_mode: "host"
 
   redis-server2:
     build: ./docker-redis/server/node2/
+    container_name: redis2
     depends_on:
       - redis-base
     network_mode: "host"
 
   redis-server3:
     build: ./docker-redis/server/node3/
+    container_name: redis3
     depends_on:
       - redis-base
     network_mode: "host"
 
   redis-sentinel1:
     build: ./docker-redis/sentinel/node1/
+    container_name: sentinel1
     depends_on:
       - redis-base
     network_mode: "host"
 
   redis-sentinel2:
     build: ./docker-redis/sentinel/node2/
+    container_name: sentinel2
     depends_on:
       - redis-base
     network_mode: "host"
 
   redis-sentinel3:
     build: ./docker-redis/sentinel/node3/
+    container_name: sentinel3
     depends_on:
       - redis-base
     network_mode: "host"
